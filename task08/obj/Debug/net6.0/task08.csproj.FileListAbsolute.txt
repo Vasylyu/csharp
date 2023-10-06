@@ -1,0 +1,15 @@
+C:\Users\вася\Desktop\c_sharp\task08\obj\Debug\net6.0\task08.csproj.AssemblyReference.cache
+C:\Users\вася\Desktop\c_sharp\task08\obj\Debug\net6.0\task08.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\вася\Desktop\c_sharp\task08\obj\Debug\net6.0\task08.AssemblyInfoInputs.cache
+C:\Users\вася\Desktop\c_sharp\task08\obj\Debug\net6.0\task08.AssemblyInfo.cs
+C:\Users\вася\Desktop\c_sharp\task08\obj\Debug\net6.0\task08.csproj.CoreCompileInputs.cache
+C:\Users\вася\Desktop\c_sharp\task08\bin\Debug\net6.0\task08.exe
+C:\Users\вася\Desktop\c_sharp\task08\bin\Debug\net6.0\task08.deps.json
+C:\Users\вася\Desktop\c_sharp\task08\bin\Debug\net6.0\task08.runtimeconfig.json
+C:\Users\вася\Desktop\c_sharp\task08\bin\Debug\net6.0\task08.dll
+C:\Users\вася\Desktop\c_sharp\task08\bin\Debug\net6.0\task08.pdb
+C:\Users\вася\Desktop\c_sharp\task08\obj\Debug\net6.0\task08.dll
+C:\Users\вася\Desktop\c_sharp\task08\obj\Debug\net6.0\refint\task08.dll
+C:\Users\вася\Desktop\c_sharp\task08\obj\Debug\net6.0\task08.pdb
+C:\Users\вася\Desktop\c_sharp\task08\obj\Debug\net6.0\task08.genruntimeconfig.cache
+C:\Users\вася\Desktop\c_sharp\task08\obj\Debug\net6.0\ref\task08.dll
