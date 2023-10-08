@@ -3,7 +3,7 @@
 является ли число чётным (делится ли оно на два без остатка).
 */
 
-System.Console.WriteLine("задай 1 число");
+System.Console.WriteLine("задай любое число");
 int number = Convert.ToInt32(Console.ReadLine());
 if (number % 2 == 0)
 {
