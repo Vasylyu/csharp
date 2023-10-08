@@ -16,7 +16,12 @@ if (numberA > numberB)
 {
     System.Console.WriteLine($"число {numberA} больше {numberB}");
 }
-else 
+else if (numberB>numberA)
 {
     System.Console.WriteLine($"число {numberB} больше {numberA}");
+}
+
+else if (numberA ==numberB)
+{
+    System.Console.WriteLine($"число {numberB} равно {numberA}");
 }
