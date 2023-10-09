@@ -8,8 +8,8 @@ int number = new Random().Next(100, 1000);
 System.Console.WriteLine(number);
 int first = number / 100;
 
-System.Console.WriteLine(first);
+System.Console.Write(first);
 
 int second = number % 10;
 
-System.Console.WriteLine(second);
+System.Console.Write(second);
