@@ -6,42 +6,50 @@
 32679 -> 6
 */
 
-//int number = new Random().Next(1, 100000);
-
 System.Console.WriteLine("Введите число");
 
 int number = Convert.ToInt32(Console.ReadLine());
-int zero = number;
-int first = number % 10 % 10;
-int second = number / 10 % 10;
-int three = number / 100 % 10;
+int first = number;
+int second = number;
+int three = number;
+int four = number;
+int fifth = number;
 
-
-if (zero < 100)
+if (number < 99)
 {
-    System.Console.WriteLine("третьей цифры нет");
+    Console.WriteLine("нету третьего числа");
 }
 
 else if (first < 1000)
 {
-    System.Console.WriteLine($" {first} это третья цифра");
-
-}
-else if (second < 10000 || second > 1000) 
-{
-    System.Console.WriteLine($" {second} это три из четырех");
+    first = number % 10 % 10;
+    System.Console.WriteLine($" {first} это третье число");
 }
 
-else if (second < 10000) 
+else if (second < 10000)
 {
-    System.Console.WriteLine($" {second} это три из четырех");
+    second = number / 10 % 10;
+    System.Console.WriteLine($" {second} это третье число");
 }
 
 else if (three < 100000)
 
 {
-    System.Console.WriteLine($" {three} это три из 5");
+    three = number / 100 % 10;
+    System.Console.WriteLine($" {three} это третье число");
 }
 
+else if (four < 1000000)
 
+{
+    four = number / 1000 % 10;
+    System.Console.WriteLine($" {four} это третье число");
+}
+
+else if (fifth < 10000000)
+
+{
+    fifth = number / 10000 % 10;
+    System.Console.WriteLine($" {fifth} это третье число");
+}
 
