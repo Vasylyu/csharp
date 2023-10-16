@@ -53,3 +53,16 @@ else if (fifth < 10000000)
     System.Console.WriteLine($" {fifth} это третье число");
 }
 
+else if (fifth < 100000000)
+
+{
+    fifth = number / 100000 % 10;
+    System.Console.WriteLine($" {fifth} это третье число");
+}
+
+else if (fifth < 1000000000)
+
+{
+    fifth = number / 1000000 % 10;
+    System.Console.WriteLine($" {fifth} это третье число");
+}
