@@ -29,12 +29,12 @@ void PrintArray(int[] arr)
 }
 int[] ProductArray(int[] parr);
 {
-    int[] result = new int[parrLength / 2];
-    int sum = 0;
     int[] result = new int[parr.Length / 2];
-    if (parr.Length % 2 ==1) 
+    int sum = 0;
+    
+    if (parr.Length % 2 == 1)
     {
-        middle = parr[parr.Lenght/2 +1];
+        middle = parr[parr.Lenght / 2 + 1];
     }
     for (int i = 0; i < parr.Length / 2; i++)
     {
@@ -43,6 +43,7 @@ int[] ProductArray(int[] parr);
     }
     return result;
 }
+
 
 int[] userArray = GenerateArray();
 PrintArray(userArray);
