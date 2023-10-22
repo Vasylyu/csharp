@@ -5,15 +5,17 @@
 [1 2 3 4 5] -> 5 8 3
 [6 7 3 6] -> 36 21
 */
+
+
 int[] GenerateArray()
 {
-    int[] array = new int[size];
+    int[] part = new int[size];
     Random random = new Random();
     for (int i = 0; i < size; i++)
     {
-        array[i] = random.Next(0, 10);
+        part[i] = random.Next(0, 5);
     }
-    return array;
+    return part;
 }
 void PrintArray(int[] arr)
 {
@@ -27,26 +29,27 @@ void PrintArray(int[] arr)
     }
     System.Console.Write("]");
 }
-int[] ProductArray(int[] parr);
+
+int[] ProductArray(int[] part);
 {
-    int[] result = new int[parr.Length / 2];
+    int[] result = new int[part.Length - part.Length / 2];
     int sum = 0;
-    
-    if (parr.Length % 2 == 1)
+
+
+    for (int i = 0; i < part.Length - part.Length / 2; i++)
     {
-        middle = parr[parr.Lenght / 2 + 1];
-    }
-    for (int i = 0; i < parr.Length / 2; i++)
-    {
-        sum = parr[i] * parr[parr.Length - 1 - i];
+        {
+            if (i == part.Length - 1 - i) ;
+            result[i] = part[i];
+            break;
+        }
+        sum = part[i] * part[part.Length - 1 - i]; // первый элемент умнож на последний элемент.
         result[i] = sum;
     }
     return result;
-}
 
-
-int[] userArray = GenerateArray();
-PrintArray(userArray);
-System.Console.WriteLine();
-int[] newArray = ProductArray(userArray);
-PrintArray(newArray);
+    int[] userArray = GenerateArray();
+    PrintArray(userArray);
+    System.Console.WriteLine();
+    int[] newArray = ProductArray(userArray);
+    PrintArray(newArray);

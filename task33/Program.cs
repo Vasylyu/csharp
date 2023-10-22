@@ -34,8 +34,12 @@ bool FindNomber(int[] arrSecond, int numb)
     }
     return result;
 }
+
 int[] userArray = RandomArray(8);
 System.Console.WriteLine("Введите число: ");
+int n = int.Parse(Console.ReadLine());
 int numb = Convert.ToInt32(Console.ReadLine());
 PrintArray(userArray);
 System.Console.WriteLine(FindNomber(userArray, numb));
+bool result2 = FindNomber(userArray,n);
+System.Console.WriteLine((result2)?$"Число {n} в массиве есть":"Число {n} в массиве нет");
