@@ -7,7 +7,7 @@
 */
 
 
-int[] GenerateArray()
+int[] GenerateArray(int size)
 {
     int[] part = new int[size];
     Random random = new Random();
@@ -30,7 +30,7 @@ void PrintArray(int[] arr)
     System.Console.Write("]");
 }
 
-int[] ProductArray(int[] part);
+int[] ProductArray(int[] part)
 {
     int[] result = new int[part.Length - part.Length / 2];
     int sum = 0;
@@ -38,8 +38,9 @@ int[] ProductArray(int[] part);
 
     for (int i = 0; i < part.Length - part.Length / 2; i++)
     {
+
+        if (i == part.Length - 1 - i)
         {
-            if (i == part.Length - 1 - i) ;
             result[i] = part[i];
             break;
         }
@@ -47,9 +48,9 @@ int[] ProductArray(int[] part);
         result[i] = sum;
     }
     return result;
-
-    int[] userArray = GenerateArray();
-    PrintArray(userArray);
-    System.Console.WriteLine();
-    int[] newArray = ProductArray(userArray);
-    PrintArray(newArray);
+}
+int[] userArray = GenerateArray(7);
+PrintArray(userArray);
+System.Console.WriteLine();
+int[] newArray = ProductArray(userArray);
+PrintArray(newArray);
