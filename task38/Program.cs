@@ -83,8 +83,8 @@ void PrintArray(double[] arrayOne)
     }
     System.Console.WriteLine("]");
     System.Console.WriteLine();
-    System.Console.WriteLine($"Минимальный элемент: {FindMin(arrayOne)}");
-    System.Console.WriteLine($"Максимальный элемент: {FindMax(arrayOne)}");
+   // System.Console.WriteLine($"Минимальный элемент: {FindMin(arrayOne)}");
+   // System.Console.WriteLine($"Максимальный элемент: {FindMax(arrayOne)}");
     System.Console.WriteLine($"Разность между максимальным и минимальным элементами = {CalcDifferenceBetweenMaxMin(arrayOne)}");
 }
 

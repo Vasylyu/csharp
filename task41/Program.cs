@@ -18,6 +18,7 @@ int[] GetRandomArray(int size)
 
 void PrintArray(int[] arr)
 {
+    Console.ForegroundColor = ConsoleColor.Green;
     System.Console.Write("[");
     for (int i = 0; i < arr.Length; i++)
     {
@@ -31,7 +32,8 @@ void PrintArray(int[] arr)
 
 int Prompt(string message)
 {
-    System.Console.Write(message);
+    Console.ForegroundColor = ConsoleColor.Blue;
+    System.Console.WriteLine(message);
     int result = Convert.ToInt32(Console.ReadLine());
     return result;
 }
@@ -48,9 +50,11 @@ int CountPositiv(int[] array)
 
 
 int userSize = Prompt("задай размер массива ");
+System.Console.WriteLine("Введите число: ");
 int[] userArray = GetRandomArray(userSize);
+
 PrintArray(userArray);
 
 int count = CountPositiv(userArray);
 System.Console.WriteLine();
-System.Console.WriteLine($"Positiv digits > 0 = {count}");
+System.Console.WriteLine($"Цифр > 0 в заданном массиве = {count}");

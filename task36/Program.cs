@@ -19,74 +19,61 @@
 18      76      11  
 Сумма нечетных элементов: 76
 */
-Console.Clear();
-
-int[] GetRnd(int size)
+public class Answer
 {
-    int[] array = new int[size];
-    for (int i = 0; i < size; i++)
+    public static int SumOddElements(int[] array)
     {
-        array[i] = new Random().Next(0, 10);
+        int sum = 0;
+        for (int i = 1; i < array.Length; i = i + 2)
+        {
+            sum += array[i];
+        }
+        return sum;
     }
-    return array;
-}
-
-void PrintArray(int[] array)
-{
-    Console.ForegroundColor = ConsoleColor.Green;
-    System.Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    public static void PrintArray(int[] array)
     {
-        Console.ForegroundColor = ConsoleColor.Cyan;
-        Thread.Sleep(1);
-        System.Console.Write(array[i]);
-        if (i < array.Length - 1)
-            System.Console.Write(", ");
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.Write(array[i]);
+            if (i < array.Length - 1) // Проверяем, не последний ли элемент
+            {
+                Console.Write("\t"); // Добавляем табуляцию после всех элементов, кроме последнего
+            }
+        }
+        Console.WriteLine();
     }
-    Console.ForegroundColor = ConsoleColor.Green;
-    System.Console.Write("]");
-    Console.ResetColor();
-}
 
-int SumNegIdx(int[] arr)
-{
-    int sum = 0;
-    for (int i = 1; i < arr.Length; i += 2)
-    {
-        sum += arr[i];
-    }
-    return sum;
-}
 
-/*
-void Main(string[] args)
-{
-int[] array;
-if (args.Length == 0)
-{
-   
-    array = new int[] { 12, 64, 28, 93, 35, 47, 6, 72, 58, 21 };
-}
-else
+    public static void Main(string[] args)
+    {
+        int[] array;
+        if (args.Length == 0)
+        {
+            array = new int[] { 12, 64, 28, 93, 35, 46, 6, 72, 58, 21 };
+            array[0] = new Random().Next(0, 10);
+            array[9] = new Random().Next(0, 10);
+            array[4] = new Random().Next(0, 10);
+        }
+        else
+        {
+            string[] argStrings = args[0].Split(", ");
+            array = new int[argStrings.Length];
+            for (int i = 0; i < argStrings.Length; i++)
+            {
+                if (int.TryParse(argStrings[i], out int number))
+                {
+                    array[i] = number;
+                }
+                else
+                {
+                    Console.WriteLine($"Ошибка при парсинге аргумента {argStrings[i]}.");
+                    return;
+                }
+            }
+        }
 
-    string[] argStrings = args[0].Split(", ");
-array = new int[argStrings.Length];
-for (int i = 0; i < argStrings.Length; i++)
-{
-    if (int.TryParse(argStrings[i], out int number))
-    {
-        array[i] = number;
-    }
-    else
-    {
-        Console.WriteLine($"Ошибка при парсинге аргумента {argStrings[i]}.");
-        return;
+        PrintArray(array);
+        int sumOdd = SumOddElements(array);
+        Console.WriteLine($"Сумма нечетных элементов: {sumOdd}");
     }
 }
-}
-*/
-PrintArray(arr);
-int sumOdd = SumNegIdx(arr);
-Console.WriteLine($"Сумма нечетных элементов: {sumOdd}");
-
-

@@ -61,4 +61,4 @@ PrintArray(array);
 System.Console.WriteLine("Количество четных элементов");
 CountPos(array);
 int[] arrayTwo = {100, 102, 105, 166, 283, 764, 300, 499, 133};
-PrintArray(arrayTwo);
+//PrintArray(arrayTwo);
