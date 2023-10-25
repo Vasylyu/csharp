@@ -15,7 +15,7 @@ if (N < 0)
 
 if (N == 0)
 {
-    Console.WriteLine("Если " + N + " число Фибоначчи: 1");
+    Console.WriteLine("Если " + N + " число Фибоначчи: 0");
     return;
 }
 

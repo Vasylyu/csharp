@@ -31,16 +31,16 @@ int[] GetRnd(int size)
     return array;
 }
 
-void PrintArray(int[] arr)
+void PrintArray(int[] array)
 {
     Console.ForegroundColor = ConsoleColor.Green;
     System.Console.Write("[");
-    for (int i = 0; i < arr.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Thread.Sleep(1);
-        System.Console.Write(arr[i]);
-        if (i < arr.Length - 1)
+        System.Console.Write(array[i]);
+        if (i < array.Length - 1)
             System.Console.Write(", ");
     }
     Console.ForegroundColor = ConsoleColor.Green;
@@ -48,17 +48,45 @@ void PrintArray(int[] arr)
     Console.ResetColor();
 }
 
-void SumNegIdx(int[] arr)
+int SumNegIdx(int[] arr)
 {
-    int summ = 0;
-    for (int i = 1; i < arr.Length; i+=2)
+    int sum = 0;
+    for (int i = 1; i < arr.Length; i += 2)
     {
-        summ = arr[i] + summ;
+        sum += arr[i];
     }
-    System.Console.WriteLine(summ);
+    return sum;
 }
 
-int[] array = GetRnd(5);
-PrintArray(array);
-System.Console.WriteLine();
-SumNegIdx(array);
+/*
+void Main(string[] args)
+{
+int[] array;
+if (args.Length == 0)
+{
+   
+    array = new int[] { 12, 64, 28, 93, 35, 47, 6, 72, 58, 21 };
+}
+else
+
+    string[] argStrings = args[0].Split(", ");
+array = new int[argStrings.Length];
+for (int i = 0; i < argStrings.Length; i++)
+{
+    if (int.TryParse(argStrings[i], out int number))
+    {
+        array[i] = number;
+    }
+    else
+    {
+        Console.WriteLine($"Ошибка при парсинге аргумента {argStrings[i]}.");
+        return;
+    }
+}
+}
+*/
+PrintArray(arr);
+int sumOdd = SumNegIdx(arr);
+Console.WriteLine($"Сумма нечетных элементов: {sumOdd}");
+
+

@@ -58,7 +58,7 @@ void CountPos(int[] arr)
 
 int[] array = GetRnd(10);
 PrintArray(array);
-System.Console.WriteLine();
+System.Console.WriteLine("Количество четных элементов");
 CountPos(array);
-int[] arrayTwo = { 4, 5, 7 };
+int[] arrayTwo = {100, 102, 105, 166, 283, 764, 300, 499, 133};
 PrintArray(arrayTwo);
