@@ -21,7 +21,7 @@ double GetRandom2dArray(int deviation, int row, int column)
     {
         for (int j = 0; j < column; j++)
         {
-            arr[i, j] = Math.Round((new Random().NextDouble() * (2 * deviation * 10) - deviation), 1);
+            array[i, j] = Math.Round((new Random().NextDouble() * (2 * deviation * 10) - deviation), 1);
         }
     }
     return array;
@@ -46,6 +46,6 @@ int userArrayRow = TakeEnterNumber("Введите количество стро
 int userArrayColumn = TakeEnterNumber("Введите количество столбцов");
 int userArrayDeviation = TakeEnterNumber("Введите диапозон");
 
-int[,] user2DArray = GetRandom2DArray(userArrayDeviation, userArrayRow, userArrayColumn);
+int[,] user2DArray = GetRandom2dArray(userArrayDeviation, userArrayRow, userArrayColumn);
 
 Print2DArray(user2DArray);
