@@ -14,7 +14,7 @@ int TakeEnterNumber(string message)
     return result;
 }
 
-double GetRandom2dArray(int deviation, int row, int column)
+double[,] GetRandom2dArray(int deviation, int row, int column)
 {
     double[,] array = new double[row, column];
     for (int i = 0; i < row; i++)
@@ -27,7 +27,7 @@ double GetRandom2dArray(int deviation, int row, int column)
     return array;
 }
 
-void Print2DArray(int[,] arr)
+void Print2DArray(double[,] arr)
 {
     Console.ForegroundColor = ConsoleColor.Green;
     for (int i = 0; i < arr.GetLength(0); i++)
@@ -46,6 +46,75 @@ int userArrayRow = TakeEnterNumber("Введите количество стро
 int userArrayColumn = TakeEnterNumber("Введите количество столбцов");
 int userArrayDeviation = TakeEnterNumber("Введите диапозон");
 
-int[,] user2DArray = GetRandom2dArray(userArrayDeviation, userArrayRow, userArrayColumn);
+double[,] user2DArray = GetRandom2dArray(userArrayDeviation, userArrayRow, userArrayColumn);
 
 Print2DArray(user2DArray);
+
+
+
+
+/*
+int TakeEnteredNumber(string message)
+{
+    System.Console.WriteLine(message);
+    int result = Convert.ToInt32(Console.ReadLine());
+    return result;
+}
+
+
+double[,] GetRandom2DArray(int deviation, int row, int column)
+{
+    double[,] array = new double[row, column];
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            array[i, j] = Math.Round((new Random().NextDouble() * (2 * deviation) - deviation), 2);            
+        }
+    }
+    return array;
+}
+
+
+double[,] GetRandom2DArray(int start, int end, int row, int column)
+{
+    double[,] array = new double[row, column];
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            array[i, j] = Math.Round((new Random().Next(-10, 10) + new Random().NextDouble()),2);            
+        }
+    }
+    return array;
+}
+
+void Print2DArray(double[,] array)
+{
+    System.Console.Write($"[ ]\t");
+    int start = 0;
+    for (int i = start; i < start + array.GetLength(1); i++)
+    {
+        System.Console.Write($"[{i}]\t");
+    }
+    System.Console.WriteLine();
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        System.Console.Write($"["+ i +"]\t");
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+        System.Console.Write(array[i, j] + "\t");
+        }
+        System.Console.WriteLine();
+    }
+}
+
+
+int userArrayRow = TakeEnteredNumber("Введите количестов строк:");
+int userArrayColumn = TakeEnteredNumber("Введите количестов столбцов:");
+int userArrayStart = TakeEnteredNumber("Введите начало диапозона:");
+int userArrayEnd = TakeEnteredNumber("Введите конец диапозона:");
+double[,] user2DArray = GetRandom2DArray(userArrayStart, userArrayEnd, userArrayRow, userArrayColumn);
+
+Print2DArray(user2DArray);
+*/
