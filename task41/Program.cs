@@ -43,14 +43,16 @@ int CountPositiv(int[] array)
     int result = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] > 0) result ++;
+        if (array[i] > 0) result++;
     }
     return result;
 }
 
 
 int userSize = Prompt("задай размер массива ");
-System.Console.WriteLine("Введите число: ");
+
+int user2Array = Prompt("Введите число: ");
+//System.Console.WriteLine("Введите число: ");
 int[] userArray = GetRandomArray(userSize);
 
 PrintArray(userArray);
