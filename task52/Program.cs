@@ -60,6 +60,7 @@ void PrintArray(double[] arr)
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Thread.Sleep(1);
+        System.Console.Write("  ");
         System.Console.Write(arr[i] + "\t");
 
     }
