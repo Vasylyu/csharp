@@ -24,7 +24,7 @@ int[,] GetRandom2DArray(int start, int end, int row, int column)
     {
         for (int j = 0; j < column; j++)
         {
-            array[i, j] = new Random().Next(start, end+1);
+            array[i, j] = new Random().Next(start, end + 1);
         }
     }
     return array;
@@ -32,9 +32,17 @@ int[,] GetRandom2DArray(int start, int end, int row, int column)
 
 void Print2DArray(int[,] arr)
 {
-    Console.ForegroundColor = ConsoleColor.Green;
+    Console.ForegroundColor = ConsoleColor.Blue;
+    System.Console.Write($"[ ]\t");
+    int start = 0;
+    for (int i = start; i < start + arr.GetLength(1); i++)
+    {
+        System.Console.Write($"[{i}]\t");
+    }
+    System.Console.WriteLine();
     for (int i = 0; i < arr.GetLength(0); i++)
     {
+        System.Console.Write($"[" + i + "]\t");
         for (int j = 0; j < arr.GetLength(1); j++)
         {
 
@@ -47,15 +55,16 @@ void Print2DArray(int[,] arr)
 void PrintArray(double[] arr)
 {
     Console.ForegroundColor = ConsoleColor.Green;
-    
+
     for (int i = 0; i < arr.Length; i++)
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Thread.Sleep(1);
         System.Console.Write(arr[i] + "\t");
+
     }
     Console.ForegroundColor = ConsoleColor.Green;
-    
+
     Console.ResetColor();
 }
 

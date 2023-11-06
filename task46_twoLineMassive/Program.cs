@@ -68,8 +68,16 @@ void GetRandom2dArray(int[,] arr)
 void Print2DArray(int[,] arr)
 {
     Console.ForegroundColor = ConsoleColor.Blue;
+    System.Console.Write($"[ ]\t");
+    int start = 0;
+    for (int i = start; i < start + arr.GetLength(1); i++)
+    {
+        System.Console.Write($"[{i}]\t");
+    }
+    System.Console.WriteLine();
     for (int i = 0; i < arr.GetLength(0); i++)
     {
+        System.Console.Write($"[" + i + "]\t");
         for (int j = 0; j < arr.GetLength(1); j++)
         {
 
@@ -79,6 +87,6 @@ void Print2DArray(int[,] arr)
     }
 }
 
-int[,] array2D = new int[3, 4];
+int[,] array2D = new int[4, 5];
 GetRandom2dArray(array2D);
 Print2DArray(array2D);
