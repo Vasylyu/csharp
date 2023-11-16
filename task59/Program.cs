@@ -58,41 +58,50 @@ void Print2DArray(int[,] arr)
 
 
 
-int[] FindMinIndex(int[,] array)
+(int, int) FindMinIndex(int[,] array)
 {
-    int[] delet = { 0, 0 };
-    int min = 0;
+    int minRow = 0;
+    int minColumn = 0;
+    int min = array[0, 0];
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
             if (array[i, j] < min)
             {
-                delet[0] = i;
-                delet[1] = j;
+                min = array[i, j];
+                minRow = i;
+                minColumn = j;
             }
         }
     }
-    return delet;
+    return (minRow, minColumn);
 }
 
 
 int[,] DeletMinColumn(int[,] array, int row, int column)
 {
     int[,] result = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
-    for (int i = 0; i < result.GetLength(0); i++)
+    int x = 0;
+
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        if (i != row)
+        if (i == row)
         {
-            for (int j = 0; j < result.GetLength(1); j++)
-            {
-                if (j != column)
-                {
-                    result[i, j] = array[i, j];
-                }
-            }
+            row = -1;
+            continue;
         }
+        int y = 0;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (j == column) continue;
+
+            result[x, y] = array[i, j];
+            y++;
+        }
+        x++;
     }
+
     return result;
 }
 int userArrayRow = TakeEnterNumber("Введите количестов строк: ");
@@ -102,10 +111,8 @@ int userArrayEnd = TakeEnterNumber("Введите конец диапозона
 int[,] user2DArray = GetRandom2DArray(userArrayStart, userArrayEnd, userArrayRow, userArrayColumn);
 
 Print2DArray(user2DArray);
-int[] userMinIndex = FindMinIndex(user2DArray);
-int minRow = userMinIndex[0];
-int minColumn = userMinIndex[1];
+(int minRow, int minColumn) = FindMinIndex(user2DArray);
 
-int[,] userDeletArray = DeletMinColumn(user2DArray, minRow, minColumn);
+int[,] newArray = DeletMinColumn(user2DArray, minRow, minColumn);
 System.Console.WriteLine();
-Print2DArray(userDeletArray);
+Print2DArray(newArray);
