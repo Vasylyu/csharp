@@ -14,8 +14,9 @@ Multiplication result:
 19  22  
 43  50
 */
-/*
-void GetRandom2dArrayA(int[,] arr1)
+
+
+void GetRandom2dArrayA(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -26,7 +27,7 @@ void GetRandom2dArrayA(int[,] arr1)
     }
 }
 
-void GetRandom2dArrayB(int[,] arr2)
+void GetRandom2dArrayB(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -38,22 +39,7 @@ void GetRandom2dArrayB(int[,] arr2)
 }
 
 
-int[,] MatrixMultiplication(int[,] arr1, int[,] arr2)
-    {
-        int[,] multiplicative = new int[arr1.GetLength(0), arr2.GetLength(1)];
-        for (int i = 0; i < multiplicative.GetLength(0); i++)
-        {
-            for (int j = 0; j < multiplicative.GetLength(1); j++)
-            {
-                for (int k = 0; k < arr1.GetLength(1); k++)
-                {
-                    multiplicative[i, j] += arr1[i, k] * arr2[k, j];
-                }
-            }
-        }
-        return multiplicative;
-    }
-    void Print2DArray(int[,] arr)
+    void Print2DArrayA(int[,] arr)
 {
     Console.ForegroundColor = ConsoleColor.Blue;
     for (int i = 0; i < arr.GetLength(0); i++)
@@ -67,70 +53,64 @@ int[,] MatrixMultiplication(int[,] arr1, int[,] arr2)
     }
 }
 
-int[,] array2D = new int[3, 4];
-int[,] array3D = new int[3, 4];
-GetRandom2dArrayA(array2D);
-Print2DArrayA(array2D);
-System.Console.WriteLine();
-GetRandom2dArrayB(array3D);
-Print2DArrayB(array3D);
-int[,] twomatrix = MatrixMultiplication(array2D, array3D);
-Print2DArrayA(twomatrix);
-*/
-
-
-
-
-void MultiplyIfPossible(int[,] matrixA, int[,] matrixB)
+void Print2DArrayB(int[,] arr)
 {
-    
-    if (matrixA.GetLength(1) != matrixB.GetLength(0))
+    Console.ForegroundColor = ConsoleColor.Blue;
+    for (int i = 0; i < arr.GetLength(0); i++)
     {
-        Console.WriteLine("It is impossible to multiply.");
-    }
-    else
-    {
-        int[,] multiplicative = MatrixMultiplication(matrixA, matrixB);
-        PrintMatrix(multiplicative);
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+
+            System.Console.Write(arr[i, j] + "\t");
+        }
+        System.Console.WriteLine();
     }
 }
-
-int[,] MatrixMultiplication(int[,] matrixA, int[,] matrixB)
+void Print2DArrayC(int[,] arr)
 {
-    int[,] multiplicative = new int[matrixA.GetLength(0), matrixB.GetLength(1)];
-    for (int i = 0; i < multiplicative.GetLength(0); i++)
+    Console.ForegroundColor = ConsoleColor.White;
+    for (int i = 0; i < arr.GetLength(0); i++)
     {
-        for (int j = 0; j < multiplicative.GetLength(1); j++)
+        for (int j = 0; j < arr.GetLength(1); j++)
         {
-            for (int k = 0; k < matrixA.GetLength(1); k++)
+
+            System.Console.Write(arr[i, j] + "\t");
+        }
+        System.Console.WriteLine();
+    }
+}
+void MultArray(int[,] arrayOne, int[,] arrayTwo)
+{
+    int[,] result = new int[arrayOne.GetLength(0), arrayTwo.GetLength(1)];
+
+    for (int i = 0; i < arrayOne.GetLength(0); i++)
+    {
+        for (int j = 0; j < arrayTwo.GetLength(1); j++)
+        {
+            result[i, j] = 0;
+            for (int k = 0; k < arrayOne.GetLength(1); k++)
             {
-                multiplicative[i, j] += matrixA[i, k] * matrixB[k, j];
+                if (arrayOne.GetLength(0) == arrayTwo.GetLength(0) && arrayOne.GetLength(1) == arrayTwo.GetLength(1))
+                {
+                    result[i, j] += arrayOne[i, k] * arrayTwo[k, j];
+                }
+                else Console.WriteLine("Массивы нельзя перемножить");
             }
         }
     }
-    return multiplicative;
+    Print2DArrayC(result);
 }
 
-void PrintMatrix(int[,] matrix)
-{
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            Console.Write($"{matrix[i, j]}\t");
-        }
-        Console.WriteLine();
-    }
-}
 
-int[,] matrix = new int[3,4];
-int[,] matrixB = new int[3,4];
-Console.WriteLine("Исходная матрица:");
-PrintMatrix(matrix);
+int[,] arrayOne = new int[2, 2];
+int[,] arrayTwo = new int[2, 2];
+System.Console.WriteLine();
+GetRandom2dArrayA(arrayOne);
+Print2DArrayA(arrayOne);
+System.Console.WriteLine();
+GetRandom2dArrayB(arrayTwo);
+Print2DArrayB(arrayTwo);
+System.Console.WriteLine();
 
-Console.WriteLine("\nMatrix B:");
-PrintMatrix(matrixB);
+MultArray(arrayOne, arrayTwo);
 
-Console.WriteLine("\nMultiplication result:");
-MultiplyIfPossible(matrix, matrixB);
-    
